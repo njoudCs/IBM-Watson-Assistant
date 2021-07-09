@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="stt1.css">
+    <title>index</title>
+  </head>
+  <body>
+    <h1 > Welcome to the homepage <h1>
+<h2>Please select the desired page  </h2>
+
+    <a href="html1.html" target="_blank">First console click here </a>
+      <a href="html2.html" target="_blank">Second console click here </a>
+
+      <script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "a46808e9-7dde-4488-85ff-2d310992d28c", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "f3e6af6a-da5f-4460-8f4a-e2ae9c76ff23", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+  </body>
+</html>
