@@ -1,0 +1,290 @@
+{
+  "intents": [
+    {
+      "intent": "ترحيب",
+      "examples": []
+    }
+  ],
+  "entities": [
+    {
+      "entity": "الخدمات",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "سااااااااعدني مافهمت",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "‎‫‎‫‎‫‎‫‎‫‎‫‎‫‎‫شلون اوقف ا؟‬‎‬‎ل‬‎ت‬‎ح‬‎ك‬‎م‬‎‬‎",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "‎‫‎‫‎‫‎‫‎‫‎‫‎‫شلون اوقف ا‬‎‬‎ل‬‎ت‬‎ح‬‎ك‬‎م‬‎",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "كيف اتحكم في المسار",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "كيف اتحكم في المسار؟",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "مافهمت؟",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "هل مجرد الضغط عليه كذا اتميت المهمة؟",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "الروابط",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "كيف انتقل للواجهة؟",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "وين الصفحة؟",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "الوداع",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "اوكي",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "تمام",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "حلو تمام",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "شكرا",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "فهمت",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "واضح",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "ترحيب",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "السلام عليكم",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "اهلا",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "اهلن",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "اهلين",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "عندي مشكله",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "كيف اقدر اسال",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "مرحبا",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "هلا",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "فقط عليك الضغط على المسار المناسب لك وفي حال رغبتك في ايقافه اضغط علي stop"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "@الخدمات",
+      "dialog_node": "node_10_1625836065835",
+      "previous_sibling": "node_5_1625837581761"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "تجربة ممتعة (: "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "@الوداع",
+      "dialog_node": "node_3_1625837037729",
+      "previous_sibling": "node_10_1625836065835"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "عزيزي : من خلال الروابط الظاهره يمكنك التنقل من خلالها"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "@الروابط",
+      "dialog_node": "node_5_1625837581761",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_3_1625837037729",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مرحبا، كيف يمكنني مساعدتك؟"
+              },
+              {
+                "text": "اهلا وسهلا تفضل ؟"
+              },
+              {
+                "text": "مرحبا"
+              },
+              {
+                "text": "اهلا"
+              },
+              {
+                "text": "كيف اقدر اخدمك ؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "@ترحيب",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "تحدث",
+  "language": "ar",
+  "description": ""
+}
